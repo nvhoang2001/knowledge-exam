@@ -1,0 +1,37 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #006bff;
+  padding: 1vh 0;
+}
+
+.header__title {
+  color: #fff;
+  height: 5vh;
+  text-align: center;
+}
+
+.count-down-timer {
+  margin: 1rem;
+  font-size: 3rem;
+  position: relative;
+  left: 85vw;
+}
+
+.questions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.questions__list {
+  width: 30vw;
+}
+
+.questions__question {
+  width: 65vw;
+}
