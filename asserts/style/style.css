@@ -19,7 +19,7 @@ body {
   margin: 1rem;
   font-size: 3rem;
   position: relative;
-  left: 85vw;
+  left: 52rem;
 }
 
 .questions {
@@ -29,9 +29,49 @@ body {
 }
 
 .questions__list {
-  width: 30vw;
+  width: 26rem;
+}
+
+.questions__list fieldset {
+  min-height: 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.questions__list button {
+  margin: 1%;
+  border: none;
+  background: linear-gradient(45deg, red 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, red 0) left/250% 100% no-repeat;
+  background-color: green;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.questions__list button:hover {
+  background-position: center;
 }
 
 .questions__question {
   width: 65vw;
+}
+
+.questions__question li {
+  position: relative;
+}
+
+.questions__question li::before {
+  display: inline-block;
+  width: 1rem;
+}
+
+.questions__question li input {
+  position: absolute;
+  left: -2.75rem;
+}
+
+.questions fieldset {
+  border-radius: 1rem;
 }
