@@ -32,7 +32,7 @@ body {
   width: 26rem;
 }
 
-.questions__list fieldset {
+.questions__field {
   min-height: 10rem;
   display: flex;
   flex-direction: row;
@@ -41,17 +41,26 @@ body {
   align-items: center;
 }
 
-.questions__list button {
+.questions__num {
   margin: 1%;
-  border: none;
-  background: linear-gradient(45deg, red 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, red 0) left/250% 100% no-repeat;
-  background-color: green;
+  border: 0.5px solid #a0a0a0;
+  background: linear-gradient(45deg, #000 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, #000 0) left/250% 100% no-repeat;
+  background-color: #fff;
   transition: 0.5s;
-  color: #fff;
+  color: black;
 }
 
-.questions__list button:hover {
+.questions__num:hover {
   background-position: center;
+  color: white;
+}
+
+.questions__num--selecting {
+  background-color: #0f0;
+}
+
+.questions__num--done {
+  background-color: yellow;
 }
 
 .questions__question {
