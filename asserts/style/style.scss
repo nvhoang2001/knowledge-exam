@@ -21,19 +21,18 @@ body {
 	margin: 1rem;
 	font-size: 3rem;
 	position: relative;
+	display: inline-block;
 	left: 52rem;
 }
 .questions {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	transition: 0.5s;
 
 	&__list {
-		width: 26rem;
-	}
-
-	&__field {
 		min-height: 10rem;
+		width: 26rem;
 
 		display: flex;
 		flex-direction: row;
@@ -73,16 +72,15 @@ body {
 				$map: $button,
 				$key: selecting-background
 			);
-			// color: map-get($map: $button, $key: white-font);
 		}
 
 		&--done {
 			background-color: map-get($map: $button, $key: done-background);
-			// color: map-get($map: $button, $key: white-font);
 		}
 	}
 
 	&__question {
+		min-height: 10rem;
 		width: 65vw;
 
 		li {
