@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  transition-duration: 0.5s;
+  transition: 0.5s;
 }
 
 .questions__list {
@@ -83,4 +83,36 @@ body {
 
 .questions fieldset {
   border-radius: 1rem;
+}
+
+.no-have-noti {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(55, 48, 48, 0.75);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-have-noti__content {
+  height: 15rem;
+  width: 30rem;
+  position: relative;
+  border: 5px solid #a59292;
+  background-color: white;
+  text-align: center;
+}
+
+.no-have-noti__close {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: red;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
 }

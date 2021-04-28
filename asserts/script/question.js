@@ -55,6 +55,27 @@ class KnowledgleTest {
 		);
 	}
 
+	noQuestionHandler() {
+		let noti = document.querySelector(".no-have-noti");
+		noti.style.display = "";
+
+		let content = noti.querySelector(".no-have-noti__content");
+
+		noti.onclick = (event) => {
+			// If button was clicked
+			if (event.target.classList.contains("no-have-noti__close")) {
+				noti.style.display = "none";
+				return;
+			}
+
+			// If grey modal was clicked
+			if (!content.contains(event.target)) {
+				noti.style.display = "none";
+				return;
+			}
+		};
+	}
+
 	init() {
 		let quesList = document.querySelector(".questions__list");
 		let selectedQuestion, selectQuestion;
@@ -84,15 +105,20 @@ class KnowledgleTest {
 
 				this.questionID = selectQuestion.textContent;
 
-				console.log(this.questions[Number(this.questionID) - 1]);
+				// console.log(this.questions[Number(this.questionID) - 1]);
 
 				// Later handling
 				// quesArea.style.position = "static";
 				quesArea.innerHTML = "";
 
-				quesArea.appendChild(
-					this.questions[Number(this.questionID) - 1].render()
-				);
+				try {
+					quesArea.appendChild(
+						this.questions[Number(this.questionID) - 1].render()
+					);
+				} catch (errMess) {
+					this.noQuestionHandler();
+					console.log(errMess);
+				}
 			}
 		});
 
@@ -102,7 +128,6 @@ class KnowledgleTest {
 			console.log(event.target);
 			this.questionID = selectQuestion.textContent;
 			this.userAnswers[this.questionID] = event.target.value;
-			console.log(this.userAnswers[this.questionID]);
 		});
 	}
 }

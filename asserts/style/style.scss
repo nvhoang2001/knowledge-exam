@@ -24,6 +24,7 @@ body {
 	display: inline-block;
 	left: 52rem;
 }
+
 .questions {
 	display: flex;
 	flex-direction: row;
@@ -100,5 +101,42 @@ body {
 
 	fieldset {
 		border-radius: 1rem;
+	}
+}
+
+.no-have-noti {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: 1;
+
+	background-color: map-get($map: $notifi, $key: grey-background);
+
+	font-size: 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__content {
+		height: 15rem;
+		width: 30rem;
+		position: relative;
+		border: 5px solid map-get($map: $notifi, $key: content-border);
+		background-color: map-get($map: $notifi, $key: content-background);
+		text-align: center;
+	}
+
+	&__close {
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+
+		background-color: map-get($map: $notifi, $key: close-btn-background);
+		color: map-get($map: $notifi, $key: close-btn-text-color);
+
+		padding: 1rem 2rem;
+		font-size: 1rem;
 	}
 }
