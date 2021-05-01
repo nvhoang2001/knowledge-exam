@@ -97,6 +97,14 @@ body {
 				left: -2.75rem;
 			}
 		}
+
+		&--true {
+			background-color: map-get($map: $button, $key: true);
+		}
+
+		&--false {
+			background-color: map-get($map: $button, $key: false);
+		}
 	}
 
 	fieldset {
@@ -109,6 +117,8 @@ body {
 	width: 100vw;
 	position: fixed;
 	z-index: 1;
+	top: 0;
+	left: 0;
 
 	background-color: map-get($map: $notifi, $key: grey-background);
 
@@ -136,7 +146,30 @@ body {
 		background-color: map-get($map: $notifi, $key: close-btn-background);
 		color: map-get($map: $notifi, $key: close-btn-text-color);
 
-		padding: 1rem 2rem;
-		font-size: 1rem;
+		padding: 0.5rem 1.5rem;
+	}
+}
+
+.mark {
+	&-shower {
+		@extend .no-have-noti;
+
+		background-color: map-get($map: $mark-shower, $key: background-color);
+		div {
+			height: 15rem;
+			width: 40rem;
+
+			position: relative;
+
+			border: 5px solid map-get($map: $notifi, $key: content-border);
+			background-color: map-get($map: $notifi, $key: content-background);
+			text-align: left;
+
+			padding: 2rem;
+		}
+	}
+
+	&__close {
+		@extend .no-have-noti__close;
 	}
 }

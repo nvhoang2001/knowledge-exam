@@ -43,8 +43,8 @@ body {
 .questions__num {
   margin: 1%;
   border: 0.5px solid #a0a0a0;
-  background: linear-gradient(45deg, #000 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, #000 0) left/250% 100% no-repeat;
-  background-color: #fff;
+  background: linear-gradient(45deg, black 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, black 0) left/250% 100% no-repeat;
+  background-color: white;
   transition: 0.5s;
   color: black;
 }
@@ -81,15 +81,25 @@ body {
   left: -2.75rem;
 }
 
+.questions__question--true {
+  background-color: lime;
+}
+
+.questions__question--false {
+  background-color: red;
+}
+
 .questions fieldset {
   border-radius: 1rem;
 }
 
-.no-have-noti {
+.no-have-noti, .mark-shower {
   height: 100vh;
   width: 100vw;
   position: fixed;
   z-index: 1;
+  top: 0;
+  left: 0;
   background-color: rgba(55, 48, 48, 0.75);
   font-size: 1.5rem;
   display: flex;
@@ -107,12 +117,25 @@ body {
   text-align: center;
 }
 
-.no-have-noti__close {
+.no-have-noti__close, .mark__close {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
   background-color: red;
   color: white;
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.mark-shower {
+  background-color: rgba(84, 84, 84, 0.75);
+}
+
+.mark-shower div {
+  height: 15rem;
+  width: 40rem;
+  position: relative;
+  border: 5px solid #a59292;
+  background-color: white;
+  text-align: left;
+  padding: 2rem;
 }

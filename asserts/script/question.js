@@ -1,7 +1,5 @@
 class Question {
 	constructor(question = "", answer = "A", ...answers) {
-		// Get current question's number
-
 		this.question = question;
 		this.answer = answer;
 		this.answers = new Array(...answers);
@@ -27,6 +25,7 @@ class Question {
 
 			let label = item.querySelector("label");
 			label.textContent = this.answers[ans];
+			label.htmlFor = input.id;
 
 			let i = document.createElement("li");
 			i.appendChild(input);
@@ -78,13 +77,12 @@ class KnowledgleTest {
 
 	init() {
 		let quesList = document.querySelector(".questions__list");
-		let selectedQuestion, selectQuestion;
-
 		let quesArea = document.querySelector(".questions__question");
+		let selectedQuestion, selectQuestion;
+		let clicked = false;
 
-		// Later handling
-		/* quesArea.innerHTML = "";
-		quesArea.style.position = "fixed"; */
+		// hide question area
+		quesArea.style.display = "none";
 
 		quesList.addEventListener("click", (event) => {
 			if (quesList.contains(event.target.closest("button"))) {
@@ -105,10 +103,8 @@ class KnowledgleTest {
 
 				this.questionID = selectQuestion.textContent;
 
-				// console.log(this.questions[Number(this.questionID) - 1]);
-
-				// Later handling
-				// quesArea.style.position = "static";
+				// Show question
+				quesArea.style.display = "block";
 				quesArea.innerHTML = "";
 
 				try {
@@ -117,13 +113,13 @@ class KnowledgleTest {
 					);
 				} catch (errMess) {
 					this.noQuestionHandler();
-					console.log(errMess);
+					// hide question area
+					quesArea.style.display = "none";
 				}
 			}
 		});
 
 		quesArea.addEventListener("click", (event) => {
-			if (!selectQuestion) return;
 			if (event.target.tagName.toLowerCase() !== "input") return;
 			console.log(event.target);
 			this.questionID = selectQuestion.textContent;
@@ -132,5 +128,4 @@ class KnowledgleTest {
 	}
 }
 
-const page = new KnowledgleTest();
-page.init();
+export { KnowledgleTest };

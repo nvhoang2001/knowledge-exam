@@ -1,11 +1,13 @@
 $button: (
-	black-background: #000,
-	white-background: #fff,
+	black-background: black,
+	white-background: white,
 	border-color: #a0a0a0,
 	black-font: black,
 	white-font: white,
 	selecting-background: #0f0,
 	done-background: yellow,
+	true: rgb(0, 255, 0),
+	false: red,
 );
 
 $notifi: (
@@ -14,4 +16,9 @@ $notifi: (
 	content-background: white,
 	close-btn-background: red,
 	close-btn-text-color: white,
+);
+
+$mark-shower: (
+	background-color: rgba(84, 84, 84, 0.75),
+	content-background: white,
 );

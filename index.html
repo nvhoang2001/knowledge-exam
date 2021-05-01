@@ -6,11 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Kiểm tra kiến thức
         </title>
-        <!-- Kiểm tra kiến thức -->
         <link rel="stylesheet" href="./asserts/style/style.css">
-        <script src="./asserts/script/question.js" defer></script>
+        <script type="module" src="./asserts/script/main.js"></script>
     </head>
 
     <body>
@@ -31,20 +30,18 @@
         <section class="no-have-noti" style="display: none;">
             <div class="no-have-noti__content">
                 <h2>Thông báo</h2>
-                <p>Không có dữ liệu câu hỏi</p>
+                <p>Alo, alo, có lỗi ròi, gọi hoangzzzsss xem đê :))</p>
                 <button class="no-have-noti__close">Đóng</button>
             </div>
         </section>
 
         <header class="header">
             <h1 class="header__title">
-                <!-- Kiểm tra kiến thức -->
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Kiểm tra kiến thức
             </h1>
         </header>
-        <section class="count-down-timer">
-            Thời gian còn lại: 12 : 35
-        </section>
+        <section class="count-down-timer"></section>
+        <section class="mark-shower" style="display: none;"></section>
         <main class="questions">
             <fieldset class="questions__list">
                 <legend>Chọn câu hỏi</legend>
@@ -101,31 +98,12 @@
                 <button class="questions__num">51</button>
                 <button class="questions__num">52</button>
             </fieldset>
-            <section class="questions__question">
-                <fieldset>
-                    <legend>Câu hỏi 1</legend>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus sint aut
-                        harum
-                        dignissimos temporibus quos reprehenderit iure numquam? Assumenda saepe sit beatae
-                        asperiores
-                        dolorum itaque nemo dolor aperiam cumque.</p>
-                    <ol type="A">
-                        <li><input type="radio" name="answer" id="ans-1" value="A">
-                            <label for="ans-1">asjnafnasfafa</label>
-                        </li>
-                        <li><input type="radio" name="answer" id="ans-2" value="B">
-                            <label for="ans-2">asfdkamfaslfma</label>
-                        </li>
-                        <li><input type="radio" name="answer" id="ans-3" value="C">
-                            <label for="ans-3">asfmafmafad</label>
-                        </li>
-                        <li><input type="radio" name="answer" id="ans-4" value="D">
-                            <label for="ans-4">ajsamfsafmaalsas</label>
-                        </li>
-                    </ol>
-                </fieldset>
-            </section>
+            <section class="questions__question"></section>
         </main>
+
+        <footer>
+            <button class="submit">Nộp bài</button>
+        </footer>
     </body>
 
 </html>
