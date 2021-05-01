@@ -2,6 +2,7 @@ import { KnowledgleTest } from "./question.js";
 import { CountDownClock as Clock } from "./count-down-clock.js";
 
 class Marking {
+	static submitted = false;
 	constructor() {
 		this.test = new KnowledgleTest();
 		this.questions = this.test.questions;
@@ -10,6 +11,9 @@ class Marking {
 	}
 
 	mark() {
+		if (Marking.submitted) return;
+
+		Marking.submitted = true;
 		let numTrue = [];
 		for (const ans in this.usrAnswer) {
 			let indx = Number(ans);
