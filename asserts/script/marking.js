@@ -52,10 +52,10 @@ class Marking {
 		};
 	}
 
-	init() {
+	init(time) {
 		const submitBtn = document.querySelector(".submit");
 		submitBtn.onclick = this.mark.bind(this);
-		let clock = new Clock(15, ".count-down-timer");
+		let clock = new Clock(time, ".count-down-timer");
 		clock.init();
 	}
 }

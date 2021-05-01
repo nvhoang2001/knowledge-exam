@@ -4,4 +4,4 @@ import { Marking } from "./marking.js";
 // clock.show();
 
 const page = new Marking();
-page.init();
+page.init(15);
