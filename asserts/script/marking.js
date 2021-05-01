@@ -59,8 +59,19 @@ class Marking {
 	init(time) {
 		const submitBtn = document.querySelector(".submit");
 		submitBtn.onclick = this.mark.bind(this);
+		const header = document.querySelector(".header");
+		header.ondbclick = Marking.resetSubmit;
 		let clock = new Clock(time, ".count-down-timer");
 		clock.init();
+	}
+
+	static resetSubmit() {
+		Marking.submitted = false;
+	}
+
+	set test(value) {
+		if (value === "reset") Marking.resetSubmit();
+		else return;
 	}
 }
 
