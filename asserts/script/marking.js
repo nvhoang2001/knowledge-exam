@@ -4,14 +4,16 @@ import { CountDownClock as Clock } from "./count-down-clock.js";
 class Marking {
 	static submitted = false;
 	constructor() {
-		this.test = new KnowledgleTest();
-		this.questions = this.test.questions;
-		this.usrAnswer = this.test.userAnswers;
-		this.test.init();
+		this.exam = new KnowledgleTest();
+		this.questions = this.exam.questions;
+		this.usrAnswer = this.exam.userAnswers;
+		this.exam.init();
 	}
 
-	mark() {
-		if (Marking.submitted) return;
+	mark(element) {
+		if (Marking.submitted) {
+			return;
+		}
 
 		Marking.submitted = true;
 		let numTrue = [];
@@ -54,25 +56,40 @@ class Marking {
 				return;
 			}
 		};
+
+		let quesList = document.querySelector(".questions__list");
+		quesList.addEventListener("click", (event) => {
+			let quesBtn = event.target.closest("button");
+			if (quesList.contains(quesBtn)) {
+				let id = quesBtn.textContent;
+				try {
+					quesArea.appendChild(
+						this.questions[Number(id) - 1].renderNote()
+					);
+				} catch (errMess) {
+					Marking.noQuestionHandler();
+					// hide question area
+					quesArea.style.display = "none";
+				}
+			}
+		});
+
+		element.style.display = "none";
 	}
 
 	init(time) {
 		const submitBtn = document.querySelector(".submit");
-		submitBtn.onclick = this.mark.bind(this);
+		submitBtn.onclick = this.mark.bind(this, submitBtn);
 		const header = document.querySelector(".header");
-		header.ondbclick = Marking.resetSubmit;
+		header.ondblclick = Marking.resetSubmit.bind(null, submitBtn);
 		let clock = new Clock(time, ".count-down-timer");
 		clock.init();
 	}
 
-	static resetSubmit() {
+	static resetSubmit(element) {
 		Marking.submitted = false;
-	}
-
-	set test(value) {
-		if (value === "reset") Marking.resetSubmit();
-		else return;
+		element.style.display = "";
 	}
 }
 
-export { Marking };
+export { Marking, KnowledgleTest };

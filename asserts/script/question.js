@@ -1,7 +1,10 @@
+import { Marking } from "./marking";
+
 class Question {
-	constructor(question = "", answer = "A", ...answers) {
+	constructor(question, answer, note, ...answers) {
 		this.question = question;
 		this.answer = answer;
+		this.note = note;
 		this.answers = new Array(...answers);
 	}
 
@@ -35,6 +38,15 @@ class Question {
 
 		return ques;
 	}
+
+	renderNote() {
+		let cmt = document.createElement("aside");
+		cmt.className = "questions__note";
+		cmt.innerHTML = `<h2>Lời giải</h2><pre>${this.note}</pre>`;
+		document
+			.querySelector(".questions__question")
+			.firstChild.appendChild(cmt);
+	}
 }
 
 class KnowledgleTest {
@@ -46,6 +58,7 @@ class KnowledgleTest {
 			new Question(
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus sint aut harum dignissimos temporibus quos reprehenderit iure numquam? Assumenda saepe sit beatae asperiores dolorum itaque nemo dolor aperiam cumque.",
 				"A",
+				"amsfasfgmasgmasglsmgsdgmsdlgmsdgamfas",
 				"asjnafnasfafa",
 				"asfdkamfaslfma",
 				"asfmafmafad",
@@ -54,7 +67,7 @@ class KnowledgleTest {
 		);
 	}
 
-	noQuestionHandler() {
+	static noQuestionHandler() {
 		let noti = document.querySelector(".no-have-noti");
 		noti.style.display = "";
 
@@ -75,11 +88,22 @@ class KnowledgleTest {
 		};
 	}
 
+	questionListRender(quesList) {
+		let numQues = this.questions.length;
+		for (let num = 1; num <= numQues; num++) {
+			const btn = document.createElement("button");
+			btn.className = "questions__num";
+			btn.innerText = num < 10 ? "0" + num : num;
+			quesList.appendChild(btn);
+		}
+	}
+
 	init() {
-		let quesList = document.querySelector(".questions__list");
 		let quesArea = document.querySelector(".questions__question");
+		let quesList = document.querySelector(".questions__list");
+		this.questionListRender(quesList);
+
 		let selectedQuestion, selectQuestion;
-		let clicked = false;
 
 		// hide question area
 		quesArea.style.display = "none";
@@ -99,6 +123,7 @@ class KnowledgleTest {
 				if (selectQuestion.classList.contains("questions__num--done")) {
 					selectQuestion.classList.remove("questions__num--done");
 				}
+
 				selectQuestion.classList.add("questions__num--selecting");
 
 				this.questionID = selectQuestion.textContent;
@@ -112,7 +137,7 @@ class KnowledgleTest {
 						this.questions[Number(this.questionID) - 1].render()
 					);
 				} catch (errMess) {
-					this.noQuestionHandler();
+					Marking.noQuestionHandler();
 					// hide question area
 					quesArea.style.display = "none";
 				}
@@ -121,7 +146,6 @@ class KnowledgleTest {
 
 		quesArea.addEventListener("click", (event) => {
 			if (event.target.tagName.toLowerCase() !== "input") return;
-			console.log(event.target);
 			this.questionID = selectQuestion.textContent;
 			this.userAnswers[this.questionID] = event.target.value;
 		});

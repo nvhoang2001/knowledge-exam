@@ -1,4 +1,4 @@
 import { Marking } from "./marking.js";
 
 const page = new Marking();
-page.init(15);
+page.init(1);

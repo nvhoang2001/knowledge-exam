@@ -28,20 +28,24 @@ button {
 }
 
 .questions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 15rem 15rem;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
   transition: 0.5s;
 }
 
+.questions * {
+  box-sizing: border-box;
+}
+
 .questions__list {
-  min-height: 10rem;
-  width: 26rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .questions__num {
@@ -64,11 +68,6 @@ button {
 
 .questions__num--done {
   background-color: yellow;
-}
-
-.questions__question {
-  min-height: 10rem;
-  width: 65vw;
 }
 
 .questions__question li {
@@ -94,6 +93,17 @@ button {
 }
 
 .questions fieldset {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.questions__note {
+  top: 110%;
+  left: 0;
+  background-color: #e18daf;
+  padding: 2rem;
   border-radius: 1rem;
 }
 
