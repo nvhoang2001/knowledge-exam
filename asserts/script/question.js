@@ -363,6 +363,17 @@ class KnowledgleTest {
 					quesArea.appendChild(
 						this.questions[Number(this.questionID) - 1].render()
 					);
+
+					let answer = document.getElementsByName("answer");
+					if (this.userAnswers[this.questionID]) {
+						answer.forEach((val) => {
+							if (
+								val.value === this.userAnswers[this.questionID]
+							) {
+								val.click();
+							}
+						});
+					}
 				} catch (errMess) {
 					Marking.noQuestionHandler();
 					// hide question area
