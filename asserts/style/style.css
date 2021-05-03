@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+* {
+  font-family: "Source Serif Pro", serif;
+}
+
 button {
   cursor: pointer;
 }
@@ -41,15 +45,20 @@ button {
 }
 
 .questions__list {
+  border-radius: 1rem;
   display: flex;
   flex-direction: row;
+  height: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-content: space-around;
+  align-items: center;
 }
 
 .questions__num {
   margin: 1%;
+  width: 2.5rem;
+  height: 1.5rem;
   border: 0.5px solid #a0a0a0;
   background: linear-gradient(45deg, black 50%, transparent 0) right/250% 100% no-repeat, linear-gradient(45deg, transparent 50%, black 0) left/250% 100% no-repeat;
   background-color: white;
@@ -92,19 +101,13 @@ button {
   background-color: red;
 }
 
-.questions fieldset {
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .questions__note {
   top: 110%;
   left: 0;
   background-color: #e18daf;
   padding: 2rem;
   border-radius: 1rem;
+  white-space: pre-wrap;
 }
 
 .no-have-noti, .mark-shower {

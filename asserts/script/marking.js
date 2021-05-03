@@ -10,10 +10,13 @@ class Marking {
 		this.exam.init();
 	}
 
-	mark(element) {
+	mark(element, clock) {
 		if (Marking.submitted) {
 			return;
 		}
+
+		// stop count-down clock
+		clock.stop();
 
 		Marking.submitted = true;
 		let numTrue = [];
@@ -58,16 +61,16 @@ class Marking {
 		};
 
 		let quesList = document.querySelector(".questions__list");
+		let quesArea = document.querySelector(".questions__question");
 		quesList.addEventListener("click", (event) => {
 			let quesBtn = event.target.closest("button");
 			if (quesList.contains(quesBtn)) {
 				let id = quesBtn.textContent;
 				try {
-					quesArea.appendChild(
-						this.questions[Number(id) - 1].renderNote()
-					);
+					this.questions[Number(id) - 1].renderNote();
 				} catch (errMess) {
-					Marking.noQuestionHandler();
+					console.log(errMess);
+					KnowledgleTest.noQuestionHandler();
 					// hide question area
 					quesArea.style.display = "none";
 				}
@@ -78,12 +81,12 @@ class Marking {
 	}
 
 	init(time) {
-		const submitBtn = document.querySelector(".submit");
-		submitBtn.onclick = this.mark.bind(this, submitBtn);
-		const header = document.querySelector(".header");
-		header.ondblclick = Marking.resetSubmit.bind(null, submitBtn);
 		let clock = new Clock(time, ".count-down-timer");
 		clock.init();
+		const submitBtn = document.querySelector(".submit");
+		submitBtn.onclick = this.mark.bind(this, submitBtn, clock);
+		const header = document.querySelector(".header");
+		header.ondblclick = Marking.resetSubmit.bind(null, submitBtn);
 	}
 
 	static resetSubmit(element) {
