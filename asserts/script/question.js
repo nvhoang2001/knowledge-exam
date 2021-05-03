@@ -125,7 +125,7 @@ class KnowledgleTest {
 			new Question(
 				"Luồng gồm những thành phần nào?",
 				"A",
-				"Đáp án: A. Gồm phân vùng code, phân vùng data, bộ các thanh ghi và một bộ đếm chương trình.",
+				"Đáp án: A. Một bộ đếm chương trình, một ngăn xếp, một bộ thanh ghi và một mã định danh.",
 				"Một bộ đếm chương trình, một ngăn xếp, một bộ thanh ghi và một mã định danh.",
 				"Một bộ đếm chương trình, một mã định dang và các tài nguyên của hệ điều hành.",
 				"Gồm phân vùng code, phân vùng data, bộ các thanh ghi và một bộ đếm chương trình."
@@ -265,8 +265,7 @@ class KnowledgleTest {
 			new Question(
 				"Nice value có giá trị nằm trong khoảng nào dưới đây?",
 				"A",
-				`Đáp án: A. [-20; 19]
-				Mỗi tiến trình có một thuộc tính là nice value, nằm trong khoảng từ -20 (ưu tiên cao nhất) đến 19 (ưu tiên thấp nhất), nice value mặc định của mỗi tiến trình là 0.`,
+				"Đáp án: A. [-20; 19]\nMỗi tiến trình có một thuộc tính là nice value, nằm trong khoảng từ -20 (ưu tiên cao nhất) đến 19 (ưu tiên thấp nhất), nice value mặc định của mỗi tiến trình là 0.",
 				"[-20; 19]",
 				"[-20; 20]",
 				"[-10; 9]",
