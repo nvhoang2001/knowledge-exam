@@ -124,10 +124,10 @@ class KnowledgleTest {
 			),
 			new Question(
 				"Luồng gồm những thành phần nào?",
-				"C",
-				"Đáp án: C. Gồm phân vùng code, phân vùng data, bộ các thanh ghi và một bộ đếm chương trình.",
+				"A",
+				"Đáp án: A. Gồm phân vùng code, phân vùng data, bộ các thanh ghi và một bộ đếm chương trình.",
 				"Một bộ đếm chương trình, một ngăn xếp, một bộ thanh ghi và một mã định danh.",
-				"Một bộ đếm chương trình, một mã định dang và các tào nguyên của hệ điều hành.",
+				"Một bộ đếm chương trình, một mã định dang và các tài nguyên của hệ điều hành.",
 				"Gồm phân vùng code, phân vùng data, bộ các thanh ghi và một bộ đếm chương trình."
 			),
 			new Question(
@@ -274,8 +274,8 @@ class KnowledgleTest {
 			),
 			new Question(
 				"Real-time priority có giá trị nằm trong khoảng nào dưới đây?",
-				"B",
-				"Đáp án: B. [0; 139]\nReal-time priority được dùng cho real-time process và có dải từ 0 (độ ưu tiên cao nhất) đến 99 (độ ưu tiên thấp nhất). Trong Linux, tiến trình real-time có priority thấp hơn (độ ưu tiên cao hơn) sẽ được chạy trước.",
+				"A",
+				"Đáp án: A. [0; 99]\nReal-time priority được dùng cho real-time process và có dải từ 0 (độ ưu tiên cao nhất) đến 99 (độ ưu tiên thấp nhất). Trong Linux, tiến trình real-time có priority thấp hơn (độ ưu tiên cao hơn) sẽ được chạy trước.",
 				"[0; 99]",
 				"[0; 139]",
 				"[-20; 19]",
