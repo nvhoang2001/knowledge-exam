@@ -161,8 +161,7 @@ class KnowledgleTest {
 			new Question(
 				"Quá trình chạy tiến trình trong Linux gồm mấy thao tác?",
 				"C",
-				`Đáp án: C. 2 thao tác: lệnh fork() + lệnh exec()
-				Để tương thích với các hệ thống UNIX khác, Linux sử dụng mô hình tiến trình tương tự với những phiên bản UNIX khác. Nguyên lý chạy tiến trình cơ bản trong UNIX được chia ra làm 2 thao tác, nhưng chúng lại thường bị gộp lại làm một: tạo tiến trình mới - fork() và chạy chương trình mới exec().`,
+				"Đáp án: C. 2 thao tác: lệnh fork() + lệnh exec()\nĐể tương thích với các hệ thống UNIX khác, Linux sử dụng mô hình tiến trình tương tự với những phiên bản UNIX khác. Nguyên lý chạy tiến trình cơ bản trong UNIX được chia ra làm 2 thao tác, nhưng chúng lại thường bị gộp lại làm một: tạo tiến trình mới - fork() và chạy chương trình mới exec().",
 				"1 thao tác: lệnh exec()",
 				"1 thao tác: lệnh system()",
 				"2 thao tác: lệnh fork() + lệnh exec()",
@@ -171,8 +170,7 @@ class KnowledgleTest {
 			new Question(
 				"Phân cấp tiến trình là gì?",
 				"A",
-				`Đáp án: A. Tập hợp các tiến trình có chung một ‘tổ tiên’
-			Khi một tiến trình tạo ra một tiến trình khác, tiến trình cha và tiến trình con sẽ được liên kết với nhau theo một cách nào đó. Tiến trình con có thể tạo ra các tiến trình khác, rồi cứ như vậy, chúng tạo nên một hệ thống phân cấp các tiến trình.`,
+				"Đáp án: A. Tập hợp các tiến trình có chung một ‘tổ tiên’\nKhi một tiến trình tạo ra một tiến trình khác, tiến trình cha và tiến trình con sẽ được liên kết với nhau theo một cách nào đó. Tiến trình con có thể tạo ra các tiến trình khác, rồi cứ như vậy, chúng tạo nên một hệ thống phân cấp các tiến trình.",
 				"Tập hợp các tiến trình có chung một ‘tổ tiên’",
 				"Tập hợp các tiến trình có chung PID",
 				"Tập hợp các tiến trình có chung UID",
@@ -181,10 +179,7 @@ class KnowledgleTest {
 			new Question(
 				"Khi tiến trình cha tạo ra tiến trình con, tồn tại mấy khả năng thực thi?",
 				"C",
-				`Đáp án: C. 2 khả năng: tiến trình cha chạy song song hoặc đợi tiến trình con
-				Khi tiến trình cha tạo ra một tiến trình con, tồn tại hai khả năng thực thi:
-				1) Tiến trình cha tiếp tục thực thi song song với các tiến trình con.
-				2) Tiến trình cha đợi cho đến khi một số hoặc tất cả các tiến trình con kết thúc.`,
+				"Đáp án: C. 2 khả năng: tiến trình cha chạy song song hoặc đợi tiến trình con\nKhi tiến trình cha tạo ra một tiến trình con, tồn tại hai khả năng thực thi:\n\t1) Tiến trình cha tiếp tục thực thi song song với các tiến trình con.\n\t2) Tiến trình cha đợi cho đến khi một số hoặc tất cả các tiến trình con kết thúc.",
 				"1 khả năng: tiến trình cha chạy song song với tiến trình con",
 				"1 khả năng: tiến trình cha đợi tiến trình con",
 				"2 khả năng: tiến trình cha chạy song song hoặc đợi tiến trình con",
@@ -193,10 +188,7 @@ class KnowledgleTest {
 			new Question(
 				"Không gian địa chỉ của tiến trình mới được tạo có mấy khả năng?",
 				"B",
-				`Đáp án: B. 2 khả năng: tiến trình con là bản sao của tiến trinh cha hoặc là một chương trình hoàn toàn mới.
-				Không gian địa chỉ cho tiến trình mới sẽ có hai khả năng:
-				1. Tiến trình con là một bản sao của tiến trình cha (nó có cùng chương trình và dữ liệu như tiến trình cha).
-				2. Tiến trình con sẽ là một chương trình hoàn toàn mới.`,
+				"Đáp án: B. 2 khả năng: tiến trình con là bản sao của tiến trinh cha hoặc là một chương trình hoàn toàn mới.\nKhông gian địa chỉ cho tiến trình mới sẽ có hai khả năng:\n\t1. Tiến trình con là một bản sao của tiến trình cha (nó có cùng chương trình và dữ liệu như tiến trình cha).\n\t2. Tiến trình con sẽ là một chương trình hoàn toàn mới.",
 				"2 khả năng: tiến trình con là bản sao của tiến trình cha hoặc là một dùng chung không gian nhớ với tiến trình cha.",
 				"2 khả năng: tiến trình con là bản sao của tiến trinh cha hoặc là một chương trình hoàn toàn mới.",
 				"3 khả năng: tiến trình con là bản sao của tiến trình cha, hoặc dùng chung không gian nhớ với tiến trình cha, hoặc là một chương trình hoàn toàn mới."
@@ -204,10 +196,7 @@ class KnowledgleTest {
 			new Question(
 				"Tiến trình thây ma là gì?",
 				"B",
-				`Đáp án: B. Là tiến trình mà tiến trình cha không gọi lệnh wait() cho nó.
-			Khi một tiến trình cha bị kết thúc trước tiến trình con thì tiến trình con sẽ trở thành tiến trình mồ côi (orphan process), lúc này systemd sẽ nhận tiến trình mồ côi, thực hiện lệnh wait() để kết thúc tiến trình mồ côi.
-			Khi tiến trình con đang cố gắng kết thúc nhưng vì lí do nào đó mà tiến trình cha chưa gọi lệnh wait() thì tiến trình con sẽ trở thành tiến trình thây ma (zombie process). Các tài nguyên mà nó chiếm giữ sẽ được giải phóng để cho các tiến trình khác sử dụng nhưng nó vẫn có mặt trong bảng tiến trình.
-			`,
+				"Đáp án: B. Là tiến trình mà tiến trình cha không gọi lệnh wait() cho nó.\nKhi một tiến trình cha bị kết thúc trước tiến trình con thì tiến trình con sẽ trở thành tiến trình mồ côi (orphan process), lúc này systemd sẽ nhận tiến trình mồ côi, thực hiện lệnh wait() để kết thúc tiến trình mồ côi.\nKhi tiến trình con đang cố gắng kết thúc nhưng vì lí do nào đó mà tiến trình cha chưa gọi lệnh wait() thì tiến trình con sẽ trở thành tiến trình thây ma (zombie process). Các tài nguyên mà nó chiếm giữ sẽ được giải phóng để cho các tiến trình khác sử dụng nhưng nó vẫn có mặt trong bảng tiến trình.",
 				"Là tiến trình mà tiến trình cha của nó kết thúc trước nó.",
 				"Là tiến trình mà tiến trình cha không gọi lệnh wait() cho nó.",
 				"Là tiến trình bị tiến trình cha của nó kết thúc.",
@@ -216,8 +205,7 @@ class KnowledgleTest {
 			new Question(
 				"Giao tiếp liên tiến trình được chia thành mấy loại?",
 				"A",
-				`Đáp án: A.  2 loại: giao tiếp bằng gửi tín hiệu và giao tiếp truyền dữ liệu
-				Giao tiếp liên tiến trình có thể chia thành 2 loại: giao tiến bằng tín hiệu – không truyền dữ liệu, và giao tiếp có truyền dữ liệu.`,
+				"Đáp án: A.  2 loại: giao tiếp bằng gửi tín hiệu và giao tiếp truyền dữ liệu\nGiao tiếp liên tiến trình có thể chia thành 2 loại: \n\t+ Giao tiến bằng tín hiệu – không truyền dữ liệu.\n\t+ Giao tiếp có truyền dữ liệu.",
 				"2 loại: giao tiếp bằng gửi tín hiệu và giao tiếp truyền dữ liệu.",
 				"2 loại: giao tiếp bằng vùng nhớ chung và giao tiếp bằng hàng đợi tin nhắn.",
 				"3 loại: giao tiếp bằng gửi tín hiệu, bằng vùng nhớ chung và bằng hàng đợi tin nhắn.",
@@ -226,16 +214,14 @@ class KnowledgleTest {
 			new Question(
 				"Kernel có thể truyền tín hiệu không?",
 				"A",
-				`Đáp án: A. Có.
-			Không chỉ có một mình tiến trình là có thể truyền tín hiệu, mà kernel cũng có thể tạo ra tín hiệu. Ví dụ như khi tiến trình con kết thúc, kernel sẽ gửi tín hiệu cho tiến trình cha.`,
+				"Đáp án: A. Có.\nKhông chỉ có một mình tiến trình là có thể truyền tín hiệu, mà kernel cũng có thể tạo ra tín hiệu. Ví dụ như khi tiến trình con kết thúc, kernel sẽ gửi tín hiệu cho tiến trình cha.",
 				"Có.",
 				"Không."
 			),
 			new Question(
 				"Với những tiến trình ở trong chế độ kernel, kernel giao tiếp với chúng bằng phương thức nào?",
 				"D",
-				`Đáp án: D. Bằng bộ lập lịch và wait_queue.
-				Đối với những tiến trình đang ở trong chế độ kernel, kernel sẽ không giao tiếp với chúng bằng tín hiệu. Mà thay vào đó, kernel sẽ thông báo cho chúng bằng bộ lập lịch và cấu trúc dữ liệu wait_queue. Khi một tiến trình muốn chờ đến khi một sự kiện nào đó xảy ra, nó sẽ tham gia vào hàng đợi tương ứng với sự kiện đó và báo với bộ lập lịch rằng nó sẽ tạm dừng thực thi, khi sự kiện mà nó chờ xảy ra, các tiến trình đang chờ bên trong hàng đợi đó sẽ được đánh thức. Cơ chế này cho phép nhiều tiến trình cùng đợi một sự kiện.`,
+				"Đáp án: D. Bằng bộ lập lịch và wait_queue.\nĐối với những tiến trình đang ở trong chế độ kernel, kernel sẽ không giao tiếp với chúng bằng tín hiệu. Mà thay vào đó, kernel sẽ thông báo cho chúng bằng bộ lập lịch và cấu trúc dữ liệu wait_queue. Khi một tiến trình muốn chờ đến khi một sự kiện nào đó xảy ra, nó sẽ tham gia vào hàng đợi tương ứng với sự kiện đó và báo với bộ lập lịch rằng nó sẽ tạm dừng thực thi, khi sự kiện mà nó chờ xảy ra, các tiến trình đang chờ bên trong hàng đợi đó sẽ được đánh thức. Cơ chế này cho phép nhiều tiến trình cùng đợi một sự kiện.",
 				"Bằng tín hiệu.",
 				"Bằng đèn hiệu.",
 				"Bằng bộ lập lịch.",
@@ -244,17 +230,15 @@ class KnowledgleTest {
 			new Question(
 				"Trong đường ống, dữ liệu được truyền theo mấy chiều?",
 				"A",
-				`Đáp án: A. 1 chiều: từ tiến trình trước đường ống => tiến trình sau đường ống.
-				Trong đường ống, dữ liệu chỉ có thể chuyển đi theo một chiều, dữ liệu vào đường ống tương đương với thao tác ghi, dữ liệu lấy ra từ đường ống tương đương với thao tác đọc, một tiến trình kết nối với một đường ống chỉ có thể thực hiện một trong hai thao tác đọc hoặc ghi, nhưng không thể thực hiện cả hai.`,
+				"Đáp án: A. 1 chiều: từ tiến trình trước đường ống => tiến trình sau đường ống.\nTrong đường ống, dữ liệu chỉ có thể chuyển đi theo một chiều, dữ liệu vào đường ống tương đương với thao tác ghi, dữ liệu lấy ra từ đường ống tương đương với thao tác đọc, một tiến trình kết nối với một đường ống chỉ có thể thực hiện một trong hai thao tác đọc hoặc ghi, nhưng không thể thực hiện cả hai.",
 				"1 chiều: từ tiến trình trước đường ống => tiến trình sau đường ống.",
-				"2 chiều: cả 2 tiến trình có thể truyền dữ liệu cho nhau.",
+				"2 chiều: cả 2 tiến trình truyền dữ liệu cho nhau.",
 				"3 chiều: 2 tiến trình cho thể truyền dữ liệu cho nhau và chúng có thể truyền dữ liệu cho kernel nữa."
 			),
 			new Question(
 				"Kỹ thuật bộ nhớ chia sẻ có nhược điểm là gì?",
 				"C",
-				`Đáp án: C. Không có khả năng đồng bộ.
-				Linux cung cấp một kỹ thuật khác để truyền dữ liệu có kích thước lớn, hoặc nhỏ, đó là bộ nhớ dùng chung. Bất cứ dữ liệu nào được một tiến trình viết lên bộ nhớ chia sẻ có thể được các tiến trình khác có kết nối với vùng đó đọc ngay lập tức. Hạn chế của kỹ thuật này đó là nó không cung cấp khả năng đồng bộ, tức một tiến trình sẽ không biết dữ liệu bên trong vùng nhớ chia sẻ đã được cập nhật hay chưa, cũng như không thể dừng hoạt động cho đến khi dữ liệu trong vùng nhớ chia sẻ được viết lên.`,
+				"Đáp án: C. Không có khả năng đồng bộ.\nLinux cung cấp một kỹ thuật khác để truyền dữ liệu có kích thước lớn, hoặc nhỏ, đó là bộ nhớ dùng chung. Bất cứ dữ liệu nào được một tiến trình viết lên bộ nhớ chia sẻ có thể được các tiến trình khác có kết nối với vùng đó đọc ngay lập tức. Hạn chế của kỹ thuật này đó là nó không cung cấp khả năng đồng bộ, tức một tiến trình sẽ không biết dữ liệu bên trong vùng nhớ chia sẻ đã được cập nhật hay chưa, cũng như không thể dừng hoạt động cho đến khi dữ liệu trong vùng nhớ chia sẻ được viết lên.",
 				"Hạn chế về kích thước dữ liệu.",
 				"Dữ liệu chỉ có thể truyền theo 1 chiều.",
 				"Không có khả năng đồng bộ.",
@@ -263,9 +247,7 @@ class KnowledgleTest {
 			new Question(
 				"Tiến trình có thể chia làm mấy loại?",
 				"A",
-				`Đáp án:  A. 2 loại: Real-time process và Normal process
-			Tiến trình có thể chia ra làm 2 loại: Real-time process (tiến trình thời gian thực) và Normal process (tiến trình bình thường).
-			Normal process được chia thành 2 loại: Interactive Process và Batch Process.`,
+				"Đáp án:  A. 2 loại: Real-time process và Normal process\nTiến trình có thể chia ra làm 2 loại:\n\tReal-time process (tiến trình thời gian thực)\n\tNormal process (tiến trình bình thường).\nNormal process được chia thành 2 loại: Interactive Process và Batch Process.",
 				"2 loại: Real-time process và Normal process",
 				"2 loại: Interactive Process và Batch Process",
 				"3 loại: Real-time process, Normal process và Batch Process",
@@ -274,8 +256,7 @@ class KnowledgleTest {
 			new Question(
 				"Hệ điều hành Linux cùng cấp mấy loại hệ số ưu tiên?",
 				"C",
-				`Đáp án: C. 2 loại: nice value và real-time priority.
-				Hệ điều hành Linux cung cấp 2 loại hệ số ưu tiên: nice value cho các normal process và real-time priority cho các real-time process.`,
+				"Đáp án: C. 2 loại: nice value và real-time priority.\nHệ điều hành Linux cung cấp 2 loại hệ số ưu tiên: nice value cho các normal process và real-time priority cho các real-time process.",
 				"1 loại: nice value.",
 				"1 loại: factor priority.",
 				"2 loại: nice value và real-time priority.",
@@ -294,8 +275,7 @@ class KnowledgleTest {
 			new Question(
 				"Real-time priority có giá trị nằm trong khoảng nào dưới đây?",
 				"B",
-				`Đáp án: B. [0; 139]
-				Real-time priority được dùng cho real-time process và có dải từ 0 (độ ưu tiên cao nhất) đến 99 (độ ưu tiên thấp nhất). Trong Linux, tiến trình real-time có priority thấp hơn (độ ưu tiên cao hơn) sẽ được chạy trước.`,
+				"Đáp án: B. [0; 139]\nReal-time priority được dùng cho real-time process và có dải từ 0 (độ ưu tiên cao nhất) đến 99 (độ ưu tiên thấp nhất). Trong Linux, tiến trình real-time có priority thấp hơn (độ ưu tiên cao hơn) sẽ được chạy trước.",
 				"[0; 99]",
 				"[0; 139]",
 				"[-20; 19]",
@@ -304,7 +284,7 @@ class KnowledgleTest {
 			new Question(
 				"Có mấy loại thuật toán lập lịch cho tiến trình trong Linux?",
 				"B",
-				`Đáp án: B. 2 loại: Thuật toán lập lịch cho real-time process và normal process.`,
+				"Đáp án: B. 2 loại: Thuật toán lập lịch cho real-time process và normal process.",
 				"2 loại: Thuật toán lập lịch cho Batch process và Interactive process.",
 				"2 loại: Thuật toán lập lịch cho real-time process và normal process.",
 				"3 loại: Thuật toán lập lịch cho real-time process, batch process và interative process.",

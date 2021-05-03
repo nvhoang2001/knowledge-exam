@@ -34,7 +34,7 @@ button {
 .questions {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 15rem 15rem;
+  grid-template-rows: 1fr;
   column-gap: 0.5rem;
   row-gap: 1rem;
   transition: 0.5s;
