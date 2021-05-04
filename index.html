@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Kiểm tra kiến thức</title>
+        <link rel="stylesheet" href="./style.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <script type="module" src="./main.js"></script>
+    </head>
+
+    <body> <template id="empty-answer"> <input type="radio" name="answer" id="ans-" value="A"> <label
+                for="ans-"></label> </template> <template id="empty-question">
+            <fieldset>
+                <legend></legend>
+                <p></p>
+                <ol type="A"></ol>
+            </fieldset>
+        </template>
+        <section class="no-have-noti" style="display: none;">
+            <div class="no-have-noti__content">
+                <h2>Thông báo</h2>
+                <p>Alo, alo, có lỗi ròi, gọi hoangzzzsss xem đê :))</p> <button
+                    class="no-have-noti__close">Đóng</button>
+            </div>
+        </section>
+        <header class="header">
+            <h1 class="header__title"> Kiểm tra kiến thức</h1>
+        </header>
+        <section class="count-down-timer"></section>
+        <section class="mark-shower" style="display: none;"></section>
+        <main class="questions">
+            <fieldset class="questions__list">
+                <legend>Chọn câu hỏi</legend>
+            </fieldset>
+            <section class="questions__question"></section>
+            <div class="buffer"></div>
+            <aside class="questions__note"></aside>
+        </main>
+        <footer class="footer"> <button class="submit">Nộp bài</button> </footer>
+    </body>
+
+</html>
