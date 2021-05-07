@@ -8,7 +8,7 @@ class CountDownClock {
 
 	show() {
 		let time = new Date(this.time);
-		this.shower.textContent = `Thời gian còn lại: ${time.getMinutes()} : ${time.getSeconds()}`;
+		this.shower.textContent = `${time.getMinutes()} : ${time.getSeconds()}`;
 	}
 
 	init(step = 1) {
